@@ -5,6 +5,12 @@ const bodyParser = require('body-parser')
 const morgan = require('morgan')
 const app = express()
 const router = require('./router')
+const mongoose = require('mongoose') // add AFTER installing 'mongodb'
+
+// DB Setup (add AFTER installing 'mongodb') - tells Mongoose to connect to our instance of MongoDB
+
+// mongoose.connect('mongodb://localhost:auth/auth', { useNewUrlParser: true }) // last 'auth' can be named whatever I want
+mongoose.connect('mongodb://localhost:27018/auth', { useNewUrlParser: true }) // last 'auth' can be named whatever I want
 
 // App Setup
 app.use(morgan('combined'))                // app.use() >> sets up: middleware; morgan = 'login framework'
