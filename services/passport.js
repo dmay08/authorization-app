@@ -5,6 +5,11 @@ const JwtStrategy = require('passport-jwt').Strategy
 const ExtractJwt = require('passport-jwt').ExtractJwt
 const LocalStrategy = require('passport-local')
 
+
+// 2 Strategies for authorization:
+    // 1) Local Strategy > verifies Email/Password
+    // 2) JWT Strategy > verifies user Token (for access to restricted areas)
+
 // Create Local Strategy === SIGN-IN >> VERIFY EMAIL/PASSWORD >> give token
 const localLogin = new LocalStrategy({ usernameField: 'email' }, function (email, password, done) {
     // Verify the email and password, call 'done'' with the user (if it's correct email and password)

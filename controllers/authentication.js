@@ -47,7 +47,7 @@ exports.signup = function(req, res, next) {
     })
 }
 
-// ------------------------------------------------------------------------------------------------------------------------------------------------
+// -------------------  BELOW = LAST code written ----------------------------------------------------------------
 
 exports.signin = function(req, res, next) {
     // User has already had their email and password auth'd (above)
