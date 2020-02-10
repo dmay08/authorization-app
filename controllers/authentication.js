@@ -45,7 +45,12 @@ exports.signup = function(req, res, next) {
         // res.json({ success: true })   // after installing jwt-simple & writing 'tokenForUser()' >> I changed this code to below 
         res.json({ token: tokenForUser(user) })
     })
+}
 
+// ------------------------------------------------------------------------------------------------------------------------------------------------
 
-
+exports.signin = function(req, res, next) {
+    // User has already had their email and password auth'd (above)
+    // We just need to give them a token
+    res.send({ token: tokenForUser(req.user) })
 }
